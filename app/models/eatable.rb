@@ -12,7 +12,7 @@
 #
 
 class Eatable < ActiveRecord::Base
-  has_many :months
+  has_and_belongs_to_many :months
   belongs_to :location
   belongs_to :food
   serialize :month_id, Array
