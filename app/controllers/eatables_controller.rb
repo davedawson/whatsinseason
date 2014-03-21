@@ -6,6 +6,5 @@ class EatablesController < ApplicationController
   end
   def show
     @eatable = Eatable.find params[:id]
-    @foods = Food.where(:id => @eatable.food_id)
   end
 end

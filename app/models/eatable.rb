@@ -12,9 +12,8 @@
 #
 
 class Eatable < ActiveRecord::Base
-  # has_one :food, :class_name => :Food, :foreign_key => :eatable
-  has_many :locations
   has_many :months
+  belongs_to :location
   belongs_to :food
   serialize :month_id, Array
 end

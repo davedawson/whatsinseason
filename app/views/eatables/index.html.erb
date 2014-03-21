@@ -1,4 +1,8 @@
 <h1>Eatables</h1>
-<% @eatables.each do |eatable| %>
-  <%= eatable.food.title %>
-<% end %>
+<ul>
+  <% @eatables.each do |eatable| %>
+    <li>
+      <%= eatable.id %> <%= eatable.food.title %>
+    </li>
+  <% end %>
+</ul>
