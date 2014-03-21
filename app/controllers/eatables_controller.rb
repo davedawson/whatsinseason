@@ -1,0 +1,3 @@
+class EatablesController < ApplicationController
+
+end
