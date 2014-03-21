@@ -17,11 +17,11 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'spork'
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'railroady'
 end
 
 group :development do
