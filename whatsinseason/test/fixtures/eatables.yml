@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  food_id: 1
+  location_id: 1
+  month_id: 1
+  description: MyString
+
+two:
+  food_id: 1
+  location_id: 1
+  month_id: 1
+  description: MyString
