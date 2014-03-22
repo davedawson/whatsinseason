@@ -1,4 +1,8 @@
 <h1><%= @eatable.id %></h1>
 <h1><%= @eatable.food.title %></h1>
 <h1><%= @eatable.location.title %></h1>
-<h1><%= @eatable.months.title %></h1>
+<% @months.each do |month| %>
+  <li>
+    <%= month.id %> <%= month.title %>
+  </li>
+<% end %>

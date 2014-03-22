@@ -11,5 +11,7 @@
 class Month < ActiveRecord::Base
   has_many :foods
   has_many :locations
+  # has_many :eatables_months
+  # has_many :eatable, :through => :eatables_months
   has_and_belongs_to_many :eatables
 end

@@ -1,0 +1,19 @@
+<%= form_for @eatable do |f| %>
+<!--   <% @foods.each do |food| %>
+    <%= check_box_tag "eatable[food_id][]", food.id %>
+    <%= food.title %>
+  <% end %> -->
+  <%= f.text_field :food_id, placeholder: "Food", :class => 'field-name' %>
+  <%= f.text_field :location_id, placeholder: "Location", :class => 'field-name' %>
+  <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
+<!--   <% @months.each do |month| %>
+    <%= check_box_tag "eatable[month_id][]", month.id %>
+    <%= month.title %>
+  <% end %> -->
+
+  <%= f.collection_select :month_ids, @months, :id, :title, {},
+    {:multiple => true} %>
+
+  <%= f.submit "Post", :class => 'add-gift', :tabindex => '3' %>
+
+<% end %>

@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321213403) do
+ActiveRecord::Schema.define(version: 20140322170859) do
 
   create_table "eatables", force: true do |t|
     t.integer  "food_id"
     t.integer  "location_id"
-    t.text     "month_id"
+    t.text     "month_ids"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
