@@ -15,6 +15,11 @@ class LocationsController < ApplicationController
   end
   def show
     @location = Location.find params[:id]
-    @months = @location.months
+    # @months = @location.months
+    @eatables = Eatable.where(:location_id => params[:id])
+    # @foods = @eatables.foods
+    # @months.each do |month|
+    #   @food = month.foods
+    # end
   end
 end

@@ -1,1 +1,12 @@
 <h1><%= @location.title %></h1>
+<% @eatables.each do |eatable| %>
+  <li><%= eatable.id %> |
+  <%= eatable.food_id %>
+  <% @food = Food.find(eatable.food_id) %>
+  <%= @food.title %>
+  <% @months = Month.find(eatable.month_ids) %>
+  <% @months.each do |month| %>
+    <%= month.title %>
+  <% end %>
+</li>
+<% end %>

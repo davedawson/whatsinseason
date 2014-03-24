@@ -12,5 +12,5 @@
 class Location < ActiveRecord::Base
   has_many :foods, :through => :eatables
   has_many :eatables
-  has_and_belongs_to_many :months
+  has_many :months, :through => :eatables
 end
