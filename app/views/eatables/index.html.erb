@@ -1,8 +1,11 @@
 <h1>Eatables</h1>
 <ul>
   <% @eatables.each do |eatable| %>
-    <li>
-      <%= eatable.id %> <%= eatable.food.title %>
-    </li>
+    <% if eatable.month_ids.include?(@month) %>
+      <li>
+        <%= eatable.id %> <%= eatable.food.title %>
+      </li>
+      <% end %>
   <% end %>
+
 </ul>
