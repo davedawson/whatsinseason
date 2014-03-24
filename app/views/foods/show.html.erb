@@ -1,1 +1,6 @@
 <h1><%= @food.title %></h1>
+<p><%= @food.description %></p>
+<% @food.eatables.each do |location| %>
+  <%= @location.title %>
+  <%= @location.months %>
+<% end %>

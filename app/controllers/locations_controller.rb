@@ -13,4 +13,8 @@ class LocationsController < ApplicationController
       render :action => "new"
     end
   end
+  def show
+    @location = Location.find params[:id]
+    @months = @location.months
+  end
 end

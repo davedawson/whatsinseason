@@ -10,6 +10,10 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find params[:id]
+    @food.eatables.each do |location|
+      @location = Location.find_by_id(location.location_id)
+      @months = @location.months
+    end
   end
   def create
     @food = Food.create!(food_params)

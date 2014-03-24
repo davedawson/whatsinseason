@@ -11,7 +11,7 @@
 #
 
 class Food < ActiveRecord::Base
-  has_many :locations
+  has_many :locations, :through => :eatables
   has_many :months
   has_many :eatables
   # belongs_to :eatables, :class_name => :Food, :foreign_key => :food
