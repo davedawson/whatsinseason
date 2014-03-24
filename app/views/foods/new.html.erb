@@ -1,0 +1,9 @@
+<%= form_for @food do |f| %>
+
+  <%= f.text_field :title, placeholder: "Food Title", :class => 'field-name' %>
+  <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
+  <%= f.text_field :image, placeholder: "Image", :class => 'field-name' %>
+
+  <%= f.submit "Post", :class => 'add-food', :tabindex => '3' %>
+
+<% end %>
