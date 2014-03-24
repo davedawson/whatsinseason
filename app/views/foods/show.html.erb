@@ -1,6 +1,32 @@
-<h1><%= @food.title %></h1>
+  <h1><%= @food.title %></h1>
 <p><%= @food.description %></p>
-<% @food.eatables.each do |location| %>
-  <%= @location.title %>
-  <%= @location.months %>
+<ul>
+
+    <% @food.eatables.each do |location| %>
+    <li>
+      <% @location = Location.find_by_id(location.location_id) %>
+      <h3><%= @location.title %></h3>
+      <ul>
+        <% @location.months.each do |month| %>
+          <li><%= month.title %></li>
+        <% end %>
+      </ul>
+    </li>
+    <% end %>
+</ul>
+
+<% @locations.each do |location| %>
+  <div>
+    <h3>Add seasonal info for <%= @food.title %> in <%= location.title %></h3>
+    <%= form_for @eatable do |f| %>
+      <%= f.hidden_field :location_id, :value => location.id %>
+      <%= f.hidden_field :food_id, :value => @food.id %>
+      <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
+
+      <%= f.collection_check_boxes :month_ids, @months, :id, :title, {}, {:multiple => true} %>
+
+      <%= f.submit "Add " + @food.title + " in " + location.title, :class => 'add button', :tabindex => '3' %>
+
+    <% end %>
+  </div>
 <% end %>

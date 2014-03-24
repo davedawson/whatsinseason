@@ -1,6 +1,9 @@
 class FoodsController < ApplicationController
   def index
-    @foods = Food.all
+    # @foods = Food.all
+    @eatables = Eatable.where(:location_id => 1)
+    @date = Date.today.month
+    @month = @date
   end
 
   def new
@@ -10,9 +13,15 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find params[:id]
+    @eatable = Eatable.new
+    @months = Month.all
+    @locations = Location.all
+    # @locations = Location.includes(:eatables).where( :eatables => { :location_id => nil } )
+    @locations = Location.includes(:eatables).where( :eatables => { :location_id => nil } )
+
     @food.eatables.each do |location|
       @location = Location.find_by_id(location.location_id)
-      @months = @location.months
+      # @months = @location.months
     end
   end
   def create
