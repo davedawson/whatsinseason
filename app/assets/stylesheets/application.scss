@@ -9,5 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *# require_tree .
  */
+
+@import 'helpers/mixins';
+@import 'helpers/defaults';
+@import 'helpers/media_queries';
+@import 'partials/base';
+@import 'partials/global';
+@import 'partials/desktop';

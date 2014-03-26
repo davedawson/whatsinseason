@@ -1,0 +1,52 @@
+a {
+  color: $color-white;
+}
+.base {
+  color: $color-white;
+}
+.base h1 {
+}
+.base h2 {
+  font-size: 24px;
+  margin: 0;
+}
+.base h3 {
+}
+.base h4 {
+}
+.base h5 {
+}
+.base h6 {
+}
+
+.base p, .base ul, .base ol {
+    color: #3e3e3e;
+    font-size: 20px;
+}
+
+.base p {
+  color: $color-white;
+}
+
+.base a {}
+
+.base ul, .base ol {
+  margin: 0;
+  color: $color-white;
+}
+
+.base ul li {
+  list-style-type: disc;
+}
+
+.base ol li {
+  list-style-type: decimal;
+}
+
+.base blockquote {
+
+}
+
+.base {
+
+}

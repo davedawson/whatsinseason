@@ -1,9 +1,9 @@
 <h1>Eatables</h1>
 <ul>
   <% @eatables.each do |eatable| %>
-    <% if eatable.month_ids.include?(@month) %>
+    <% if eatable.month_ids.include?(@month) && eatable.location_id == 1 %>
       <li>
-        <%= eatable.id %> <%= eatable.food.title %>
+        <%= link_to eatable.food.title, food_path(eatable) %>
       </li>
       <% end %>
   <% end %>

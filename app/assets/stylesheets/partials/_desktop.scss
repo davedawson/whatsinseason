@@ -1,0 +1,126 @@
+.desktop {
+  background-color: darken($color-dark-brown, 18%);
+  .wrap {
+    width: 100%;
+    overflow: hidden;
+  }
+  .intro {
+    background: url(/img/desktop-bg.jpg) no-repeat;
+    background-size: cover;
+    @include respond-to(wide-screens) {
+      padding-bottom: 150px;
+    }
+    @include respond-to(medium-screens) {
+      padding-bottom: 50px;
+    }
+
+    overflow: hidden;
+  }
+  a {
+    color: $color-white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .icon-icon {
+    width: 45px;
+    height: 45px;
+    background-size: cover;
+    display: block;
+    margin: 50px auto;
+  }
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    @include transition(font-size 0.3s ease-in-out);
+    @include respond-to(wide-screens) {
+      font-size: 68px;
+    }
+    @include respond-to(medium-screens) {
+      font-size: 48px;
+    }
+  }
+
+  .base {
+    p {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 22px;
+      @include transition(font-size 0.3s ease-in-out);
+      @include respond-to(wide-screens) {
+        font-size: 26px;
+        line-height: 34px;
+      }
+      @include respond-to(medium-screens) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+  .description {
+    width:90%;
+    margin: 0 auto;
+    @include respond-to(wide-screens) {
+      width: 60%;
+      max-width: 620px;
+      margin: 50px 0 0 0;
+      float: left;
+      p:first-child {
+        width: 80%;
+        font-size: 42px;
+        line-height: 50px;
+        @include respond-to(medium-screens) {
+          font-size: 26px;
+          width: 100%;
+          line-height: 30px;
+        }
+      }
+    }
+    @include respond-to(medium-screens) {
+      width: 50%;
+    }
+  }
+  .phone {
+    background: url(/img/desktop-phone-mobile.png) no-repeat;
+    background-size: contain;
+    width: 90%;
+    height: 930px;
+    margin: 0 auto;
+    @include transition(all 0.3s ease-in-out);
+    @include respond-to(wide-screens) {
+      background: url(/img/desktop-phone.png) no-repeat;
+      background-size: cover;
+      width: 1000px;
+      height: 750px;
+      // float: right;
+      position: absolute;
+      right: -43%;
+      margin-top: -25px;
+    }
+    @include respond-to(medium-screens) {
+      width: 600px;
+      right: 5%;
+      background: url(/img/desktop-phone-mobile.png) no-repeat;
+      background-size: contain;
+      width: 35%;
+      height: 930px;
+      margin-top: 20px;
+    }
+  }
+  .details {
+    clear: both;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+    @include respond-to(wide-screens) {
+      width: 60%;
+      float: none;
+    }
+    p {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}
