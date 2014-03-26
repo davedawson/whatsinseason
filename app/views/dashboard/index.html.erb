@@ -1,0 +1,12 @@
+<h1>What's in Season Today?</h1>
+<ul>
+  <% @eatables.each do |eatable| %>
+    <% @food = Food.find(eatable.food_id) %>
+    <% if eatable.month_ids.include?(@month) && eatable.location_id == 1 %>
+      <li class="<%= @food.type %>">
+        <%# link_to eatable.food.title, food_path(eatable) %>
+      </li>
+      <% end %>
+  <% end %>
+
+</ul>
