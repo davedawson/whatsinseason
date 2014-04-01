@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails',              '~> 4.0.2'
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
@@ -9,36 +10,29 @@ gem 'figaro'
 gem 'devise'
 gem 'rails3-jquery-autocomplete'
 
+# Development
+gem 'annotate'
+gem 'rspec-rails'
+gem 'spork'
+gem 'guard-rspec'
+gem 'guard-spork'
+gem 'railroady'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+# Assets
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'spork'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'railroady'
-end
+# Testing
+gem 'capybara'
+gem 'rb-fsevent', :require => false
+gem 'factory_girl_rails'
 
-group :development do
-  gem 'annotate'
-end
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', require: false
 
-group :test do
-  gem 'capybara'
-  gem 'rb-fsevent', :require => false
-  gem 'factory_girl_rails'
-end
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
+# Heroku
+gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '4.0.1'
