@@ -10,28 +10,36 @@ gem 'figaro'
 gem 'devise'
 gem 'rails3-jquery-autocomplete'
 
-# Development
-gem 'annotate'
-gem 'rspec-rails'
-gem 'spork'
-gem 'guard-rspec'
-gem 'guard-spork'
-gem 'railroady'
 
-# Assets
-gem 'sass-rails'
-gem 'coffee-rails'
-gem 'uglifier'
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
 
-# Testing
-gem 'capybara'
-gem 'rb-fsevent', :require => false
-gem 'factory_girl_rails'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'spork'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'railroady'
+end
 
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', require: false
+group :development do
+  gem 'annotate'
+end
 
-# Heroku
+group :test do
+  gem 'capybara'
+  gem 'rb-fsevent', :require => false
+  gem 'factory_girl_rails'
+end
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
