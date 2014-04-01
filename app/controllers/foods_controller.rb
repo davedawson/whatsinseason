@@ -44,6 +44,7 @@ class FoodsController < ApplicationController
         :id,
         :title,
         :description,
+        :category,
         :image
       )
     end
