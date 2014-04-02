@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<% if controller.controller_name.to_s == 'foods' %> admin<% end %>">
-
+<% if current_user.try(:admin?) %>
+  <div class="god-mode">GOD MODE</div>
+<% end %>
 <div class="wrap">
+
   <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
   <%= yield %>
