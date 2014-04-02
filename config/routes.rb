@@ -1,4 +1,5 @@
 Whatsinseason::Application.routes.draw do
+  devise_for :users
   resources :eatables
   resources :foods
   resources :locations

@@ -1,4 +1,5 @@
 class EatablesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @eatable = Eatable.new
     @months = Month.all
