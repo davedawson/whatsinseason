@@ -1,5 +1,6 @@
 class EatablesController < ApplicationController
   before_action :authenticate_user!
+  before_filter :verify_is_admin, :only => [:index, :show, :new, :edit, :create, :destroy]
   def new
     @eatable = Eatable.new
     @months = Month.all
@@ -49,5 +50,8 @@ class EatablesController < ApplicationController
         :description,
         :month_ids => []
       )
+    end
+    def verify_is_admin
+      (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
     end
 end

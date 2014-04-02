@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  before_filter :verify_is_admin, :only => [:new, :edit, :create, :destroy]
   def index
     # @foods = Food.all
     # @eatables = Eatable.where(:location_id => 1)
@@ -47,5 +48,9 @@ class FoodsController < ApplicationController
         :category,
         :image
       )
+    end
+
+    def verify_is_admin
+      (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
     end
 end
