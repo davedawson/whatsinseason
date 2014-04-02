@@ -6,9 +6,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<% if controller.controller_name.to_s == 'foods' %> admin<% end %>">
 
-<%= yield %>
+<div class="wrap">
+  <%= yield %>
+</div>
 
 </body>
 </html>

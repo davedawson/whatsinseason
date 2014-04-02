@@ -1,0 +1,65 @@
+.admin {
+  .wrap {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  legend, label {
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    margin: 10px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"] {
+        border: 1px solid transparentize(#000, 0.87);
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        width: 100%;
+        font-size: 18px;
+        padding: 15px 2%;
+        @include respond-to(medium-screens) {
+          width: 100%;
+        }
+    }
+    input {
+        box-sizing: border-box;
+        border: none;
+        padding: 0.75em;
+        outline: none;
+        &::-webkit-input-placeholder {
+            font-style: italic;
+            font-weight: 100;
+        }
+        &:-moz-placeholder {
+            font-style: italic;
+            font-weight: 100;
+        }
+    }
+    &.form-horizontal {
+        input {
+            display: inline-block;
+        }
+    }
+  input[type='submit'] {
+    // @extend .site-button;
+    background: $color-green;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-white;
+    width: 100%;
+  }
+}

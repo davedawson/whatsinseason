@@ -3,14 +3,17 @@
   <%= f.text_field :title, placeholder: "Food Title", :class => 'field-name' %>
   <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
   <%= f.text_field :image, placeholder: "Image", :class => 'field-name' %>
-  <%= f.label :category %><br />
-    <%= f.label :category, "Fruit", :value => "fruit"  %>
-    <%= f.radio_button :category, "fruit" %>
-    <%= f.label :category, "Vegetable", :value => "vegetable" %>
-    <%= f.radio_button :category, "vegetable" %>
-    <%= f.label :category, "Herb", :value => "herb" %>
-    <%= f.radio_button :category, "herd" %>
+  <h2>Category: </h2>
+    <%= f.label :category, :value => "fruit"  do %>
+      <%= f.radio_button :category, "fruit" %> Fruit
+    <% end %>
+    <%= f.label :category, :value => "vegetable" do %>
+      <%= f.radio_button :category, "vegetable" %> Vegetable
+    <% end %>
+    <%= f.label :category, "Herb", :value => "herb" do %>
+      <%= f.radio_button :category, "herb" %> Herb
+    <% end %>
 
-  <%= f.submit "Post", :class => 'add-food', :tabindex => '3' %>
+  <%= f.submit "Add Food", :class => 'add-food', :tabindex => '3' %>
 
 <% end %>
