@@ -3,7 +3,12 @@
   <% @eatables.each do |eatable| %>
     <% if eatable.month_ids.include?(@month) %>
       <li>
-        <%= link_to eatable.food.title, food_path(eatable.food) %>
+        <%= link_to food_path(eatable.food) do %>
+          <h2><%=  eatable.food.title %></h2>
+          <div class="detail">
+            <%=  eatable.food.category %>
+          </div>
+        <% end %>
       </li>
       <% end %>
   <% end %>

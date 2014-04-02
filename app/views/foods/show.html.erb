@@ -1,11 +1,11 @@
-  <h1><%= @food.title %></h1>
-  <img src="<%= @food.image.url %>" alt="<%= @food.title %>" />
+<h1><%= @food.title %></h1>
+<img src="<%= @food.image.url %>" alt="<%= @food.title %>" />
 <p><%= @food.description %></p>
 <ul>
   <li>
     <% @food.eatables.each do |location| %>
     <% @location = Location.find(location.location_id) %>
-      <h3><%= @location.title %> <%= link_to "edit", edit_eatable_path(location) %></h3>
+      <h3><%= @location.title %> <% if current_user.try(:admin?) %><%= link_to "edit", edit_eatable_path(location) %><% end %></h3>
       <ul>
         <% location.months.each do |month| %>
           <li><%= month.title %></li>
@@ -14,21 +14,22 @@
     <% end %>
 </ul>
 
+<% if current_user.try(:admin?) %>
+  <% @locations.each do |location| %>
+    <% unless Eatable.exists?(:location_id => location.id, :food_id => @food.id) %>
+      <div>
+        <h3>Add seasonal info for <%= @food.title %> in <%= location.title %></h3>
+        <%= form_for @eatable do |f| %>
+          <%= f.hidden_field :location_id, :value => location.id %>
+          <%= f.hidden_field :food_id, :value => @food.id %>
+          <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
 
-<% @locations.each do |location| %>
-  <% unless Eatable.exists?(:location_id => location.id, :food_id => @food.id) %>
-    <div>
-      <h3>Add seasonal info for <%= @food.title %> in <%= location.title %></h3>
-      <%= form_for @eatable do |f| %>
-        <%= f.hidden_field :location_id, :value => location.id %>
-        <%= f.hidden_field :food_id, :value => @food.id %>
-        <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
+          <%= f.collection_check_boxes :month_ids, @months, :id, :title, :item_wrapper_class => 'checkbox_container' %>
 
-        <%= f.collection_check_boxes :month_ids, @months, :id, :title, :item_wrapper_class => 'checkbox_container' %>
+          <%= f.submit "Add " + @food.title + " in " + location.title, :class => 'add button', :tabindex => '3' %>
 
-        <%= f.submit "Add " + @food.title + " in " + location.title, :class => 'add button', :tabindex => '3' %>
-
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
