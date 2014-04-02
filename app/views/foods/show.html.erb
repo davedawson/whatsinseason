@@ -24,7 +24,7 @@
         <%= f.hidden_field :food_id, :value => @food.id %>
         <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
 
-        <%= f.collection_check_boxes :month_ids, @months, :id, :title, {}, {:multiple => true} %>
+        <%= f.collection_check_boxes :month_ids, @months, :id, :title, :item_wrapper_class => 'checkbox_container' %>
 
         <%= f.submit "Add " + @food.title + " in " + location.title, :class => 'add button', :tabindex => '3' %>
 
