@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails',              '~> 4.0.2'
-# gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+# gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'figaro'
 gem 'devise'
 gem 'rails3-jquery-autocomplete'
-
+gem "paperclip", "~> 4.1"
 
 group :assets do
   gem 'sass-rails'

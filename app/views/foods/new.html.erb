@@ -2,7 +2,7 @@
 
   <%= f.text_field :title, placeholder: "Food Title", :class => 'field-name' %>
   <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
-  <%= f.text_field :image, placeholder: "Image", :class => 'field-name' %>
+  <%= f.file_field :image %>
   <h2>Category: </h2>
     <%= f.label :category, :value => "fruit"  do %>
       <%= f.radio_button :category, "fruit" %> Fruit
