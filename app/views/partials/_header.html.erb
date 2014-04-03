@@ -3,6 +3,8 @@
     <div class="god-mode"><p>GOD MODE</p>
       <p class="current-user">Logged in as <strong><%= current_user.email %></strong></p>
       <ul>
+        <li><%= link_to "View Foods", foods_path %></li>
+        <li><%= link_to "Add Foods", new_food_path %></li>
         <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       </ul>

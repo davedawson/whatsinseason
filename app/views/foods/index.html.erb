@@ -1,10 +1,10 @@
 <h1>Foods</h1>
 <ul>
-    <% @eatables.each do |eatable| %>
+    <% @foods.each do |food| %>
       <%# if eatable.month_ids.include?(@month) %>
         <li>
-          <%= link_to food_path(eatable.food) do %>
-            <%=  eatable.food.title %> | <%=  eatable.food.category %>
+          <%= link_to food_path(food) do %>
+            <%=  food.title %>
           <% end %>
         </li>
       <%# end %>

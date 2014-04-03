@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   def index
     # @foods = Food.all
     # @eatables = Eatable.where(:location_id => 1)
-    @eatables = Eatable.all
+    @foods = Food.all
     @date = Date.today.month
     @month = @date
   end
