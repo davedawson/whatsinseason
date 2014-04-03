@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',              '~> 4.0.2'
-gem 'sqlite3'
-# gem 'pg'
+gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
@@ -25,6 +24,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'railroady'
+  gem 'sqlite3'
 end
 
 group :development do
