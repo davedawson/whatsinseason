@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_filter :verify_is_admin, :only => [:new, :edit, :create, :destroy]
+  # before_filter :verify_is_admin, :only => [:new, :edit, :create, :destroy]
   def index
     # @foods = Food.all
     # @eatables = Eatable.where(:location_id => 1)

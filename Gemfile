@@ -24,7 +24,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'railroady'
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :development do

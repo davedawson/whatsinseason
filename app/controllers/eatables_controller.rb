@@ -1,6 +1,6 @@
 class EatablesController < ApplicationController
   before_action :authenticate_user!
-  before_filter :verify_is_admin, :only => [:index, :show, :new, :edit, :create, :destroy]
+  # before_filter :verify_is_admin, :only => [:index, :show, :new, :edit, :create, :destroy]
   def new
     @eatable = Eatable.new
     @months = Month.all
