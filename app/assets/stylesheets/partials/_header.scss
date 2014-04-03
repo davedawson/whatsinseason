@@ -9,7 +9,29 @@ header {
   p a {
     text-decoration: underline;
   }
-  h1 a {
+  h1 {
+    text-align: center;
+  }
+  nav {
+    position: relative;
+  }
+  .locations, .season {
+    position: absolute;
+    top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    color: transparentize($color-white, 0.25);
+    font-size: 12px;
+    a {
+      color: transparentize($color-white, 0.25);
+    }
+  }
+  .locations {
+    left: 5%;
+  }
+  .season {
+    right: 5%;
   }
   .explain {
     position: absolute;
@@ -44,18 +66,17 @@ header {
     }
 
   }
-  .season, .location {
+  .god-mode {
+    background: $color-pink;
+    text-align: center;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 500;
-    color: transparentize($color-white, 0.75);
-  }
-  .season {
-    float: left;
-    margin-left: 5%;
-  }
-  .location {
-    float: right;
-    margin-right: 5%;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    color: $color-white;
+    position: relative;
+    top: -5px;
+    padding: 5px 0;
+    width: 100%;
   }
 }

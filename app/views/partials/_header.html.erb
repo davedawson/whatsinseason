@@ -2,5 +2,13 @@
   <% if current_user.try(:admin?) %>
     <div class="god-mode">GOD MODE</div>
   <% end %>
-  <h1><a href="/">What's in Season Today?</a></h1>
+  <nav>
+    <ul class="locations">
+      <% @locations.each do |location| %>
+      <li><a href="#"><%= location.title %></a></li>
+      <% end %>
+    </ul>
+    <h1><a href="/">What's in Season Today?</a></h1>
+    <p class="season">Spring</p>
+  </nav>
 </header>
