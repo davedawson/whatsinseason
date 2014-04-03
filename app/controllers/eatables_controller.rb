@@ -10,10 +10,11 @@ class EatablesController < ApplicationController
   def create
     # @eatable = Eatable.create_eatable(eatable_params)
     @eatable = Eatable.create!(eatable_params)
+    @food = Food.find(eatable_params[:food_id])
     # @food.locations << Location.find_by_id(params[:months])
     # @food.attributes = {'locations_ids' => []}.merge(params[:food] || {})
     if @eatable.save
-        redirect_to eatables_path(@eatable), :notice => "Eatable created!"
+        redirect_to food_path(@food), :notice => "Added!"
     else
       render :action => "new"
     end

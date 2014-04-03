@@ -1,0 +1,61 @@
+header {
+  padding: 5px 0 0;
+  background: $color-brown;
+  // border-bottom: darken($color-brown, 30%);
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+  p a {
+    text-decoration: underline;
+  }
+  h1 a {
+  }
+  .explain {
+    position: absolute;
+    right: 5%;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    background: transparentize($color-white, 0.7);
+    display: block;
+    @include border-radius(22px);
+    span {
+      display: none;
+    }
+  }
+  .logo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 35px;
+    text-indent: -99999px;
+    margin: 0;
+    a {
+      display: block;
+      margin: 8px auto;
+      width: 100%;
+      background-size: 35px;
+      background-position: center;
+    }
+
+  }
+  .season, .location {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    color: transparentize($color-white, 0.75);
+  }
+  .season {
+    float: left;
+    margin-left: 5%;
+  }
+  .location {
+    float: right;
+    margin-right: 5%;
+  }
+}

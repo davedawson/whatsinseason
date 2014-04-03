@@ -15,21 +15,24 @@
 </ul>
 
 <% if current_user.try(:admin?) %>
+<ul class="enter-info">
   <% @locations.each do |location| %>
     <% unless Eatable.exists?(:location_id => location.id, :food_id => @food.id) %>
-      <div>
+      <li>
         <h3>Add seasonal info for <%= @food.title %> in <%= location.title %></h3>
         <%= form_for @eatable do |f| %>
           <%= f.hidden_field :location_id, :value => location.id %>
           <%= f.hidden_field :food_id, :value => @food.id %>
           <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
 
-          <%= f.collection_check_boxes :month_ids, @months, :id, :title, :item_wrapper_class => 'checkbox_container' %>
+          <%= f.collection_check_boxes :month_ids, @months, :id, :title, {}, {:multiple => true} %>
 
           <%= f.submit "Add " + @food.title + " in " + location.title, :class => 'add button', :tabindex => '3' %>
 
         <% end %>
-      </div>
+      </li>
     <% end %>
+
   <% end %>
+</ul>
 <% end %>

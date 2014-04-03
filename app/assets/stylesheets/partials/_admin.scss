@@ -5,7 +5,7 @@
   }
   legend, label {
     font-size: 18px;
-    width: 100%;
+    width: 80%;
     display: block;
     margin: 10px;
     }
@@ -37,6 +37,7 @@
         border: none;
         padding: 0.75em;
         outline: none;
+        float: left;
         &::-webkit-input-placeholder {
             font-style: italic;
             font-weight: 100;
@@ -61,5 +62,15 @@
     letter-spacing: 0.1em;
     color: $color-white;
     width: 100%;
+    float: none;
   }
+}
+.enter-info {
+    li {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #eee;
+        clear: both;
+        list-style-type: none;
+    }
 }

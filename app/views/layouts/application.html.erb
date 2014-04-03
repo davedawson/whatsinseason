@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Whatsinseason</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="<% if controller.controller_name.to_s == 'foods' %> admin<% end %>">
-<% if current_user.try(:admin?) %>
-  <div class="god-mode">GOD MODE</div>
-<% end %>
-<div class="wrap">
+<%= render 'partials/head' %>
+<body id="<%= body_id(yield(:body_id)) %>" class="<%= body_class(yield(:body_class)) %>">
 
-  <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
+  <%= render 'partials/header' %>
+  <%= render 'partials/errors' %>
+<div class="wrap">
   <%= yield %>
 </div>
 
