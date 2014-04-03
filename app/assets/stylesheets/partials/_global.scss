@@ -10,7 +10,7 @@ body {
 
 .wrap {
   border: 1px solid $color-light-brown;
-  padding: 40px;
+  // padding: 40px;
 }
 #food-list {
   padding: 0;
@@ -27,6 +27,7 @@ body {
     border-top: 2px solid transparentize($color-white, 0.2);
     background: $color-white;
     color: $color-brown;
+    border: 1px solid $color-brown;
     @include respond-to(wide-screens) {
         float: left;
         margin: 2%;

@@ -1,9 +1,9 @@
 <% provide(:body_id, 'home') %>
 <% provide(:body_class, '') %>
-<ul>
+<ul id="food-list">
   <% @eatables.each do |eatable| %>
     <% if eatable.month_ids.include?(@month) %>
-      <li>
+      <li class="<%=  eatable.food.category %>">
         <%= link_to food_path(eatable.food) do %>
           <h2><%=  eatable.food.title %></h2>
           <div class="detail">
