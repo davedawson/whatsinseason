@@ -78,5 +78,23 @@ header {
     top: -5px;
     padding: 5px 0;
     width: 100%;
+    .current-user {
+      position: absolute;
+      left: 1%;
+      width: 50%;
+      text-align: left;
+      top: 5px;
+    }
+    ul {
+      position: absolute;
+      right: 1%;
+      width: 50%;
+      text-align: right;
+      top: 5px;
+      li {
+        display: inline;
+        margin-right: 1%;
+      }
+    }
   }
 }
