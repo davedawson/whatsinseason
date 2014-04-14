@@ -1,38 +1,40 @@
-<h1><%= @food.title %></h1>
-<% unless @food.image.url %><img src="<%= @food.image.url %>" alt="<%= @food.title %>" /><% end %>
-<p><%= @food.description %></p>
-<ul>
-  <li>
-    <% @food.eatables.each do |location| %>
-    <% @location = Location.find(location.location_id) %>
-      <h3><%= @location.title %> <% if current_user.try(:admin?) %><%= link_to "edit", edit_eatable_path(location) %><% end %></h3>
-      <ul>
-        <% location.months.each do |month| %>
-          <li><%= month.title %></li>
-        <% end %>
-      </ul>
+<div class="wrap">
+  <h1><%= @food.title %></h1>
+  <% unless @food.image.url %><img src="<%= @food.image.url %>" alt="<%= @food.title %>" /><% end %>
+  <% if @food.description %><p><%= @food.description %></p><% end %>
+  <ul>
+    <li>
+      <% @food.eatables.each do |location| %>
+      <% @location = Location.find(location.location_id) %>
+        <h2><%= @food.title %> are in season in <%= @location.title %> <% if current_user.try(:admin?) %><%= link_to "edit", edit_eatable_path(location) %><% end %></h2>
+        <ul>
+          <% location.months.each do |month| %>
+            <li><%= month.title %></li>
+          <% end %>
+        </ul>
+      <% end %>
+  </ul>
+
+  <% if current_user.try(:admin?) %>
+  <ul class="enter-info">
+    <% @locations.each do |location| %>
+      <% unless Eatable.exists?(:location_id => location.id, :food_id => @food.id) %>
+        <li>
+          <h3>Add seasonal info for <%= @food.title %> in <%= location.title %></h3>
+          <%= form_for @eatable do |f| %>
+            <%= f.hidden_field :location_id, :value => location.id %>
+            <%= f.hidden_field :food_id, :value => @food.id %>
+            <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
+
+            <%= f.collection_check_boxes :month_ids, @months, :id, :title, {}, {:multiple => true} %>
+
+            <%= f.submit "Add " + @food.title + " in " + location.title, :class => 'add button', :tabindex => '3' %>
+
+          <% end %>
+        </li>
+      <% end %>
+
     <% end %>
-</ul>
-
-<% if current_user.try(:admin?) %>
-<ul class="enter-info">
-  <% @locations.each do |location| %>
-    <% unless Eatable.exists?(:location_id => location.id, :food_id => @food.id) %>
-      <li>
-        <h3>Add seasonal info for <%= @food.title %> in <%= location.title %></h3>
-        <%= form_for @eatable do |f| %>
-          <%= f.hidden_field :location_id, :value => location.id %>
-          <%= f.hidden_field :food_id, :value => @food.id %>
-          <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
-
-          <%= f.collection_check_boxes :month_ids, @months, :id, :title, {}, {:multiple => true} %>
-
-          <%= f.submit "Add " + @food.title + " in " + location.title, :class => 'add button', :tabindex => '3' %>
-
-        <% end %>
-      </li>
-    <% end %>
-
+  </ul>
   <% end %>
-</ul>
-<% end %>
+</div>
