@@ -7,11 +7,10 @@
         <%= link_to food_path(eatable.food) do %>
           <h2><%=  eatable.food.title %></h2>
           <div class="detail">
-            <%=  eatable.food.category %>
+            <p><%=  eatable.food.category %></p>
           </div>
         <% end %>
       </li>
       <% end %>
   <% end %>
-
 </ul>

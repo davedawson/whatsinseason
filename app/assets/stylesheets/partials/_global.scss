@@ -23,55 +23,27 @@ body {
   li {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    border-top: 2px solid transparentize($color-white, 0.2);
-    background: $color-white;
-    color: $color-brown;
-    border: 1px solid $color-brown;
+    padding: 20px 5%;
     @include respond-to(wide-screens) {
-        float: left;
-        margin: 2%;
-        width: 29%;
-      }
+    }
     &.vegetable {
-      border-left: 3px solid $color-green;
-      @include respond-to(wide-screens) {
-        border-top: 3px solid $color-green;
-        background: $color-light-brown;
-      }
-      .more-info {
-        background: darken($color-green, 8%);
-        border-top: 2px solid darken($color-green, 10%);
-      }
+
     }
     &.fruit {
-      background-color: $color-pink;
-      @include respond-to(wide-screens) {
-        border-top: 3px solid $color-pink;
-        background: $color-light-brown;
-      }
-      .more-info {
-        background: darken($color-pink, 8%);
-        border-top: 2px solid darken($color-pink, 10%);
-      }
+
     }
     a {
-      color: $color-brown;
       text-decoration: none;
-      margin: 0;
-      width: 100%;
-      display: block;
-      font-weight: 600;
-      box-sizing: border-box;
-      @include respond-to(wide-screens) {
-        color: $color-dark-brown;
-      }
-
-
     }
     h2 {
-      margin: 20px 5%;
+      margin: 0;
+      font-size: 20px;
+      color: $color-green;
       // float: left;
+    }
+    .detail {
+      color: $color-light-brown;
+      font-size: 16px;
     }
     .right.icon {
       float: right;
