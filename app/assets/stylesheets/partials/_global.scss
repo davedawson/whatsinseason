@@ -34,6 +34,9 @@ h2 {
   @include border-radius(6px);
   // padding: 40px;
 }
+.alert {
+  color: red;
+}
 .wrap {
   width: 92%;
   margin: 0 auto;

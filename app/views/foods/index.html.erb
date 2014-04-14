@@ -9,7 +9,7 @@
             <% end %>
             <% if current_user.try(:admin?) %>
               <% if food.eatables.count == 0 %>
-                <em>(No months assigned)<em>
+                <em class="alert">(No months assigned)<em>
               <% else %>
                 <em><%# food.eatables.count %></em>
               <% end %>
