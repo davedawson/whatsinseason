@@ -1,19 +1,21 @@
-<h1>Foods</h1>
-<ul>
-    <% @foods.each do |food| %>
-      <%# if eatable.month_ids.include?(@month) %>
-        <li>
-          <%= link_to food_path(food) do %>
-            <%=  food.title %>
-          <% end %>
-          <% if current_user.try(:admin?) %>
-            <% if food.eatables.count == 0 %>
-              <em>(No months assigned)<em>
-            <% else %>
-              <em><%# food.eatables.count %></em>
+<div class="wrap">
+  <h1>Foods</h1>
+  <ul id="food-list">
+      <% @foods.each do |food| %>
+        <%# if eatable.month_ids.include?(@month) %>
+          <li>
+            <%= link_to food_path(food) do %>
+              <%=  food.title %>
             <% end %>
-          <% end %>
-        </li>
-      <%# end %>
-    <% end %>
-</ul>
+            <% if current_user.try(:admin?) %>
+              <% if food.eatables.count == 0 %>
+                <em>(No months assigned)<em>
+              <% else %>
+                <em><%# food.eatables.count %></em>
+              <% end %>
+            <% end %>
+          </li>
+        <%# end %>
+      <% end %>
+  </ul>
+</div>

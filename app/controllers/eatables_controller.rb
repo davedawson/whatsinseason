@@ -42,6 +42,12 @@ class EatablesController < ApplicationController
     @months = @eatable.months
   end
 
+  def edit
+    @eatable = Eatable.find params[:id]
+    @months = @eatable.months
+    @foods = Food.all
+  end
+
   private
     def eatable_params
       params.require(:eatable).permit(

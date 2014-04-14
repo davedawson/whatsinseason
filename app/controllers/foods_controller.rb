@@ -28,6 +28,7 @@ class FoodsController < ApplicationController
       # @months = @location.months
     end
   end
+
   def create
     @food = Food.create!(food_params)
     # @food.locations << Location.find_by_id(params[:months])
@@ -37,6 +38,13 @@ class FoodsController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+  def edit
+    @locations = Location.all
+    @food = Food.find params[:id]
+    @eatable = Eatable.new
+    @months = Month.all
   end
 
   private

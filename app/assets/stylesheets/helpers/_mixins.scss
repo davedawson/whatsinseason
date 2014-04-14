@@ -156,3 +156,9 @@ $default-border-radius: 5px !default;
     -webkit-transition-delay: $delay;
     transition-delay:         $delay;
 }
+
+.textFieldClean {
+  border: 0;
+  @include border-radius(3px);
+  padding: 10px
+}
