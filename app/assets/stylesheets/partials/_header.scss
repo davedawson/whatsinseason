@@ -1,9 +1,9 @@
 header {
-  padding: 5px 0 0;
-  background: $color-brown;
+  padding: 5px 0;
+  // background: $color-brown;
   // border-bottom: darken($color-brown, 30%);
   a {
-    color: $color-white;
+    color: $color-brown;
     text-decoration: none;
   }
   p a {
@@ -12,6 +12,9 @@ header {
   h1 {
     text-align: center;
   }
+  img {
+    width: 10%;
+  }
   nav {
     position: relative;
   }
@@ -19,19 +22,20 @@ header {
     position: absolute;
     top: 0;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 500;
-    color: transparentize($color-white, 0.25);
-    font-size: 12px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    color: transparentize($color-brown, 0.25);
+    font-size: 10px;
+    line-height: 320%;
     a {
-      color: transparentize($color-white, 0.25);
+      color: transparentize($color-brown, 0.25);
     }
   }
   .locations {
-    left: 5%;
+    right: 5%;
   }
   .season {
-    right: 5%;
+    left: 5%;
   }
   .explain {
     position: absolute;

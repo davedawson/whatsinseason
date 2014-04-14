@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   end
   def all_months
     @months = Month.all
+    @month = Date::MONTHNAMES[Date.today.month]
   end
 
 end

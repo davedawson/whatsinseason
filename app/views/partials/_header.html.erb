@@ -12,12 +12,12 @@
     </div>
   <% end %>
   <nav>
+    <p class="season"><%= Date::MONTHNAMES[Date.today.month] %></p>
+    <h1><a href="/"><%= image_tag("logo.svg", alt: "What's in Season Today Logo") %></a></h1>
     <ul class="locations">
       <% @locations.each do |location| %>
       <li><a href="#"><%= location.title %></a></li>
       <% end %>
     </ul>
-    <h1><a href="/">What's in Season Today?</a></h1>
-    <p class="season">Spring</p>
   </nav>
 </header>
