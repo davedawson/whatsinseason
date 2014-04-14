@@ -1,19 +1,20 @@
-<%= form_for @food do |f| %>
+<div class="wrap">
+  <%= form_for @food do |f| %>
 
-  <%= f.text_field :title, placeholder: "Food Title", :class => 'field-name' %>
-  <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
-  <%= f.file_field :image %>
-  <h2>Category: </h2>
-    <%= f.label :category, :value => "fruit"  do %>
-      <%= f.radio_button :category, "fruit" %> Fruit
-    <% end %>
-    <%= f.label :category, :value => "vegetable" do %>
-      <%= f.radio_button :category, "vegetable" %> Vegetable
-    <% end %>
-    <%= f.label :category, "Herb", :value => "herb" do %>
-      <%= f.radio_button :category, "herb" %> Herb
-    <% end %>
+    <%= f.text_field :title, placeholder: "Food Title", :class => 'field-name' %>
+    <%= f.text_field :description, placeholder: "Description", :class => 'field-name' %>
+    <%= f.file_field :image %>
+    <h2>Category: </h2>
+      <%= f.label :category, :value => "fruit"  do %>
+        <%= f.radio_button :category, "fruit" %> Fruit
+      <% end %>
+      <%= f.label :category, :value => "vegetable" do %>
+        <%= f.radio_button :category, "vegetable" %> Vegetable
+      <% end %>
+      <%= f.label :category, "Herb", :value => "herb" do %>
+        <%= f.radio_button :category, "herb" %> Herb
+      <% end %>
 
-  <%= f.submit "Add Food", :class => 'add-food', :tabindex => '3' %>
+    <%= f.submit "Add Food", :class => 'add-food', :tabindex => '3' %>
 
-<% end %>
+  <% end %>

@@ -6,7 +6,7 @@
     <li>
       <% @food.eatables.each do |location| %>
       <% @location = Location.find(location.location_id) %>
-        <h2><%= @food.title %> are in season in <%= @location.title %> <% if current_user.try(:admin?) %><%= link_to "edit", edit_food_path(location) %><% end %></h2>
+        <h2><%= @food.title %> are in season in <%= @location.title %> <% if current_user.try(:admin?) %><%= link_to "edit", edit_food_path(@food.id) %><% end %></h2>
         <ul>
           <% location.months.each do |month| %>
             <li><%= month.title %></li>

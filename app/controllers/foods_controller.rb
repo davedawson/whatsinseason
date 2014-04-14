@@ -43,7 +43,7 @@ class FoodsController < ApplicationController
   def edit
     @locations = Location.all
     @food = Food.find params[:id]
-    @eatable = Eatable.new
+    @eatables = Eatable.where(:food_id == @food.id)
     @months = Month.all
   end
 
