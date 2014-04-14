@@ -1,11 +1,11 @@
 // From  http://ahrengot.com/web-development/sass-breakpoint-mixin/
 
-@mixin breakpoint($point, $value: 0) {
-  @if $point == mobile {
+@mixin respond-to($point, $value: 0) {
+  @if $point == handhelds {
     @media (min-width: 320px) { @content; }
   }
 
-  @else if $point == mobile-horizontal {
+  @else if $point == handhelds-horizontal {
     @media (min-width: 480px) { @content; }
   }
 
@@ -17,11 +17,11 @@
     @media (min-width: 1024px) { @content; }
   }
 
-  @else if $point == desktop {
+  @else if $point == wide-screens {
     @media (min-width: 1280px) { @content; }
   }
 
-  @else if $point == desktop-wide {
+  @else if $point == extra-wide-screens {
     @media (min-width: 1500px) { @content; }
   }
 

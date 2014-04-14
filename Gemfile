@@ -11,6 +11,7 @@ gem 'rails3-jquery-autocomplete'
 gem "paperclip", "~> 4.1"
 gem 'sass-rails', '~> 4.0.2'
 gem 'compass-rails'
+gem 'susy'
 
 group :assets do
 
