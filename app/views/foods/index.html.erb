@@ -6,6 +6,13 @@
           <%= link_to food_path(food) do %>
             <%=  food.title %>
           <% end %>
+          <% if current_user.try(:admin?) %>
+            <% if food.eatables.count == 0 %>
+              <em>(No months assigned)<em>
+            <% else %>
+              <em><%# food.eatables.count %></em>
+            <% end %>
+          <% end %>
         </li>
       <%# end %>
     <% end %>
