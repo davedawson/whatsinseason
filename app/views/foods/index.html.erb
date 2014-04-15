@@ -4,9 +4,9 @@
       <% @foods.each do |food| %>
         <%# if eatable.month_ids.include?(@month) %>
           <li>
-            <%= link_to food_path(food) do %>
+            <%# link_to food_path(food) do %>
               <%=  food.title %>
-            <% end %>
+            <%# end %>
             <% if current_user.try(:admin?) %>
               <% if food.eatables.count == 0 %>
                 <em class="alert">(No months assigned)<em>
