@@ -1,5 +1,6 @@
 header {
   padding: 5px 0;
+  @include clearfix;
   // background: $color-brown;
   // border-bottom: darken($color-brown, 30%);
   a {
@@ -10,11 +11,14 @@ header {
     text-decoration: underline;
   }
   h1 {
-    text-align: center;
-    margin: 0 auto;
+    float: right;
+    width: 40px;
+    margin-right: 5%;
+    margin-top: 5px;
+    margin-bottom: 0px;
   }
   img {
-    width: 10%;
+    width: 100%;
   }
   nav {
     position: relative;
@@ -22,14 +26,16 @@ header {
   .locations, .season {
     position: absolute;
     top: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-weight: 700;
+    font-weight: 500;
     color: transparentize($color-brown, 0.25);
-    font-size: 10px;
-    line-height: 320%;
+    font-size: 14px;
+    line-height: 360%;
+    // line-height: 320%;
     a {
       color: transparentize($color-brown, 0.25);
+    }
+    strong {
+      font-weight: 700;
     }
   }
   .locations {
