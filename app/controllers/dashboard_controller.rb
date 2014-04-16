@@ -7,9 +7,9 @@ class DashboardController < ApplicationController
     @date = Date.today.month
     @month = @date
     if is_mobile_device?
-      # render :layout => "application"
+      @mobile = "test"
     else
-      render :layout => "desktop_home"
+      # render :layout => "desktop_home"
     end
   end
 end

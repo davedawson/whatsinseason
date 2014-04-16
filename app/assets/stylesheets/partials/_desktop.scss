@@ -1,11 +1,14 @@
 .desktop {
-  background-color: darken($color-dark-brown, 18%);
+  // background-color: darken($color-dark-brown, 18%);
+  h1 {
+    color: white;
+  }
   .wrap {
     width: 100%;
     overflow: hidden;
   }
   .intro {
-    background: url(/img/desktop-bg.jpg) no-repeat;
+    background: url(/assets/desktop-bg.jpg) no-repeat;
     background-size: cover;
     @include respond-to(wide-screens) {
       padding-bottom: 150px;
@@ -83,14 +86,14 @@
     }
   }
   .phone {
-    background: url(/img/desktop-phone-mobile.png) no-repeat;
+    background: url(/assets/desktop-phone-mobile.png) no-repeat;
     background-size: contain;
     width: 90%;
     height: 930px;
     margin: 0 auto;
     @include transition(all 0.3s ease-in-out);
     @include respond-to(wide-screens) {
-      background: url(/img/desktop-phone.png) no-repeat;
+      background: url(/assets/desktop-phone.png) no-repeat;
       background-size: cover;
       width: 1000px;
       height: 750px;
@@ -102,7 +105,7 @@
     @include respond-to(medium-screens) {
       width: 600px;
       right: 5%;
-      background: url(/img/desktop-phone-mobile.png) no-repeat;
+      background: url(/assets/desktop-phone-mobile.png) no-repeat;
       background-size: contain;
       width: 35%;
       height: 930px;
