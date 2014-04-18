@@ -24,15 +24,16 @@ header {
     position: relative;
   }
   .locations, .season {
-    position: absolute;
+    position: relative;
     top: 0;
     font-weight: 500;
     color: transparentize($color-brown, 0.25);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 360%;
     // line-height: 320%;
     a {
       color: transparentize($color-brown, 0.25);
+      text-decoration: none;
     }
     strong {
       font-weight: 700;

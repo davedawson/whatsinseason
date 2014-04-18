@@ -12,7 +12,7 @@
     </div>
   <% end %>
   <nav>
-    <p class="season"><strong><%= Date::MONTHNAMES[Date.today.month] %> Produce</strong> in <% if @locations.count < 2 %>The Northeast<% end %></p>
+    <p class="season"><strong><a href="/"><%= Date::MONTHNAMES[Date.today.month] %> Produce</strong> in <% if @locations.count < 2 %>The Northeast<% end %></a></p>
     <% if @locations.count > 1 %>
       <ul class="locations">
         <% @locations.each do |location| %>
@@ -20,7 +20,5 @@
         <% end %>
       </ul>
     <% end %>
-    <h1><a href="/"><%= image_tag("logo.svg", alt: "What's in Season Today Logo") %></a></h1>
-
   </nav>
 </header>
