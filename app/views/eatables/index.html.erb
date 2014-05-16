@@ -3,7 +3,9 @@
   <% @eatables.each do |eatable| %>
     <% if eatable.month_ids.include?(@month) && eatable.location_id == 1 %>
       <li>
-        <%= link_to eatable.food.title, food_path(eatable) %>
+        <%= link_to eatable.food.title, food_path(eatable.food) %> |
+        <%= link_to 'Delete', eatable, method: :delete, data: { confirm: 'Are you sure?' }
+%>
       </li>
       <% end %>
   <% end %>

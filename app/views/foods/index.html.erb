@@ -5,11 +5,13 @@
         <%# if eatable.month_ids.include?(@month) %>
           <li>
             <%# link_to food_path(food) do %>
-              <%=  food.title %>
+              <%= link_to food.title, food_url(food) %>
             <%# end %>
             <% if current_user.try(:admin?) %>
+            | <%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }
+%> |
               <% if food.eatables.count == 0 %>
-                <em class="alert">(No months assigned)<em>
+                <em class="alert">(No months assigned)</em>
               <% else %>
                 <em><%# food.eatables.count %></em>
               <% end %>
